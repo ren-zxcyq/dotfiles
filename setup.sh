@@ -57,14 +57,39 @@ mkdir /home/"$calling_user"/.config
 mv /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
 mv /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 
+#Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
 export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
-export RUNLEVEL=3
+#export RUNLEVEL=3
 
 #Unattended install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
-konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+#konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
+
+# Move .dotfiles
+cp ~/dotfiles/gitconfig ~/.gitconfig
+cp ~/dotfiles/gitignore.global ~/.gitignore.global
+
+cp ~/dotfiles/selected_editor ~/.selected_editor
+cp ~/dotfiles/vimrc ~/.vimrc
+cp -r ~/dotfiles/vim ~/.vim
+
+cp ~/dotfiles/tmux.conf ~/.tmux.conf
+
+# Copy zsh settings
+cp ~/dotfiles/zshrc ~/.zshrc
+cp ~/dotfiles/custom/aliases.zsh .oh-my-zsh/custom/aliases.zsh	#$ZSH_CUSTOM/aliases.zsh
+#cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
+# k - already exists under custom/plugins/ but in case of update:
+git clone https://github.com/supercrabtree/k .oh-my-zsh/custom/plugins/k #$ZSH_CUSTOM/plugins/k
+rm -rf .oh-my-zsh/custom/plugins/k/.git/
+# manual oh-my-zsh update
+#omz update
+
+
+
 # Make zsh your default shell
-chsh -s $(which zsh)
+chsh -s `which zsh`
 
 EOF
 
