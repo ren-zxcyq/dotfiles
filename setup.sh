@@ -54,8 +54,8 @@ git clone https://github.com/powerline/fonts.git \
 #│   └── mydarkpastel.colorscheme
 #├── konsolerc
 mkdir /home/"$calling_user"/.config
-mv /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
-mv /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
+cp /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
+cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 
 #Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
 #export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
@@ -88,7 +88,7 @@ rm -rf .oh-my-zsh/custom/plugins/k/.git/
 
 
 # Make zsh your default shell
-sudo -u `whoamiz` -ns chsh -s `which zsh` `whoami`
+sudo -u `whoami` -ns chsh -s `which zsh` `whoami`
 
 #EOF
 
