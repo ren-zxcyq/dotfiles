@@ -10,10 +10,10 @@ echo 'Running as' `whoami`
 #sudo ./VBoxLinuxAdditions.run
 
 # Install apt packages
-sudo apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
+sudo -ns apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
 
 # Install python libs
-sudo pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
+sudo -ns pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
@@ -88,7 +88,7 @@ rm -rf .oh-my-zsh/custom/plugins/k/.git/
 
 
 # Make zsh your default shell
-chsh -s `which zsh` `whoami`
+sudo -u `whoamiz` -ns chsh -s `which zsh` `whoami`
 
 #EOF
 
