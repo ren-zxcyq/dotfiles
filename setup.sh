@@ -55,40 +55,10 @@ git clone https://github.com/powerline/fonts.git \
 && rm -rf fonts/
 
 sudo -i -u $calling_user bash << EOF
-# Move .dotfiles
-cp ~/dotfiles/gitconfig ~/.gitconfig
-cp ~/dotfiles/gitignore.global ~/.gitignore.global
-cp ~/dotfiles/selected_editor ~/.selected_editor
-cp ~/dotfiles/vimrc ~/.vimrc
-cp -r ~/dotfiles/vim ~/.vim
 
-cp ~/dotfiles/tmux.conf ~/.tmux.conf
-
-cp ~/dotfiles/gitconfig ~/.gitconfig
-
-# Backup & 
-# Bash
-#mv ~/.bash_history ~/.bash_history.bak
-#mv .bash_history ~/.bash_history
-#mv ~/.bashrc ~/.bashrc.bak
-#mv .bashrc ~/.bashrc
-
-# z - This might not be needed
-#cp .z ~/.z
-#cp .zcompdump ~/.zcompdump
-
-# zsh
-cp ~/dotfiles/zshrc ~/.zshrc
-
-cp ~/dotfiles/custom/aliases.zsh $ZSH_CUSTOM/aliases.zsh
-cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
-
-# Install zsh plugins
-# already exists there but in case of update.
-#git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
-
-# manual oh-my-zsh update
-#omz update
+gnome-terminal --window-with-profile=bash -- \
+    bash -c "/home/"$calling_user"/dotfiles/
 
 EOF
+
 echo 'Done --'
