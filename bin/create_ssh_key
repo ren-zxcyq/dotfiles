@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -C "_@gmail.com"
+echo
+echo 'PrivK generated, PubKey:'
+cat ~/.ssh/id_rsa.pub
+echo
+echo "--Should add the gen'd PK to GitHub ssh keys --"
