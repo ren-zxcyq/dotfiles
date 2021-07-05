@@ -19,7 +19,7 @@ pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 #Unattended install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
 # Make zsh your default shell
-&& sudo chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
