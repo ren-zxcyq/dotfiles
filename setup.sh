@@ -4,13 +4,13 @@ calling_user=`who | awk '{print $1}'`
 echo 'Running as' `whoami`
 #sudo apt update -y && sudo apt update -y && sudo apt dist-upgrade -y
 
-# VBOX?
+# VBOX? 
 #sudo ./VBoxLinuxAdditions.run 
 #sudo apt install gcc make perl
 #sudo ./VBoxLinuxAdditions.run
 
 # Install apt packages
-sudo apt -y install wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
+sudo apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
 
 # Install python libs
 sudo pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
@@ -20,8 +20,8 @@ sudo -i -u $calling_user bash << EOF
 
 echo 'Running as' `whoami`
 
-gnome-terminal --window-with-profile=bash -- \
-    bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
+konsole -e bash -c "mkdir /home/"$calling_user"/.config; mv /home/"$calling_user"/dotfiles/config/konsole; mv /home/"$calling_user"/dotfiles/config/consolerc"
+konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 
 EOF
 
@@ -56,8 +56,7 @@ git clone https://github.com/powerline/fonts.git \
 
 sudo -i -u $calling_user bash << EOF
 
-gnome-terminal --window-with-profile=bash -- \
-    bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
+konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
 
 EOF
 
