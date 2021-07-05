@@ -21,9 +21,9 @@ cp ~/dotfiles/tmux.conf ~/.tmux.conf
 # Copy zsh settings
 cp ~/dotfiles/zshrc ~/.zshrc
 cp ~/dotfiles/custom/aliases.zsh $ZSH_CUSTOM/aliases.zsh
-cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
+#cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
 # k - already exists under custom/plugins/ but in case of update:
-#git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 
 # manual oh-my-zsh update
 #omz update
