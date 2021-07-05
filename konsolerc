@@ -1,0 +1,19 @@
+[Desktop Entry]
+DefaultProfile=
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+ShowMenuBarByDefault=true
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAAA3kAAAQiAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Virtual1 Height 1815=1080
+Virtual1 Width 1080=889
+Virtual1 XPosition=191
+Virtual1 YPosition=601
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded
