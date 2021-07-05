@@ -21,7 +21,7 @@ sudo -i -u $calling_user bash << EOF
 echo 'Running as' `whoami`
 
 gnome-terminal --window-with-profile=bash -- \
-    bash -c "/home/"$calling_user"/dotfiles/install_zsh"
+    bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 
 EOF
 
@@ -54,7 +54,7 @@ git clone https://github.com/powerline/fonts.git \
 && cd .. \
 && rm -rf fonts/
 
-
+sudo -i -u $calling_user bash << EOF
 # Move .dotfiles
 cp ~/dotfiles/gitconfig ~/.gitconfig
 cp ~/dotfiles/gitignore.global ~/.gitignore.global
