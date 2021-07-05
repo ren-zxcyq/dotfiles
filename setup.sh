@@ -57,7 +57,7 @@ git clone https://github.com/powerline/fonts.git \
 sudo -i -u $calling_user bash << EOF
 
 gnome-terminal --window-with-profile=bash -- \
-    bash -c "/home/"$calling_user"/dotfiles/
+    bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
 
 EOF
 
