@@ -1,5 +1,7 @@
 # Get Ready
 cd ~
+calling_user=`who | awk '{print $1}'`
+echo 'Running as' `whoami`
 #sudo apt update -y && sudo apt update -y && sudo apt dist-upgrade -y
 
 # VBOX?
@@ -11,15 +13,18 @@ cd ~
 sudo apt -y install wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
 
 # Install python libs
-pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
+sudo pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
+# Run the rest as the caller
+sudo -i -u $calling_user bash << EOF
+echo 'Running as' `whoami`
 # Install oh-my-zsh
 # Install
 #sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #Unattended install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
 # Make zsh your default shell
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
@@ -85,4 +90,6 @@ cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
 
 # manual oh-my-zsh update
 #omz update
+
+EOF
 echo 'Done --'
