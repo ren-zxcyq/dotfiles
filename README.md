@@ -1,7 +1,7 @@
 # dotfiles_zsh
 
 ## Install everything and move the files to .files within ~.
-	setup.sh	>	Ignores bin/ dir. 
+	setup.sh	#	Ignores bin/ dir. 
 
 ## Desc
 bin/	>	Might be useful
