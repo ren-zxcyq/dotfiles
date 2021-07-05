@@ -17,14 +17,13 @@ sudo pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
 # Run the rest as the caller
 sudo -i -u $calling_user bash << EOF
+
 echo 'Running as' `whoami`
-# Install oh-my-zsh
-# Install
-#sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#Unattended install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
-# Make zsh your default shell
-chsh -s $(which zsh)
+
+gnome-terminal --window-with-profile=bash -- \
+    bash -c "/home/"$calling_user"/dotfiles/install_zsh"
+
+EOF
 
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
