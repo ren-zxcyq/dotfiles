@@ -52,15 +52,15 @@ git clone https://github.com/powerline/fonts.git \
 
 
 # Move .dotfiles
-cp ~/dotfiles-auto_build-zsh/gitconfig ~/.gitconfig
-cp ~/dotfiles-auto_build-zsh/gitignore.global ~/.gitignore.global
-cp ~/dotfiles-auto_build-zsh/selected_editor ~/.selected_editor
-cp ~/dotfiles-auto_build-zsh/vimrc ~/.vimrc
-cp -r ~/dotfiles-auto_build-zsh/vim ~/.vim
+cp ~/dotfiles/gitconfig ~/.gitconfig
+cp ~/dotfiles/gitignore.global ~/.gitignore.global
+cp ~/dotfiles/selected_editor ~/.selected_editor
+cp ~/dotfiles/vimrc ~/.vimrc
+cp -r ~/dotfiles/vim ~/.vim
 
-cp ~/dotfiles-auto_build-zsh/tmux.conf ~/tmux.conf
+cp ~/dotfiles/tmux.conf ~/.tmux.conf
 
-cp ./gitconfig ~/gitconfig
+cp ~/dotfiles/gitconfig ~/.gitconfig
 
 # Backup & 
 # Bash
@@ -74,10 +74,10 @@ cp ./gitconfig ~/gitconfig
 #cp .zcompdump ~/.zcompdump
 
 # zsh
-cp ~/dotfiles-auto_build-zsh/zshrc ~/.zshrc
+cp ~/dotfiles/zshrc ~/.zshrc
 
-cp ~/dotfiles-auto_build-zsh/custom/aliases.zsh $ZSH_CUSTOM/aliases.zsh
-cp -r ~/dotfiles-auto_build-zsh/custom/plugins/k $ZSH_CUSTOM/plugins/k
+cp ~/dotfiles/custom/aliases.zsh $ZSH_CUSTOM/aliases.zsh
+cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
 
 # Install zsh plugins
 # already exists there but in case of update.
