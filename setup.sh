@@ -54,8 +54,8 @@ echo 'Running as' `whoami`
 #│   └── mydarkpastel.colorscheme
 #├── konsolerc
 mkdir /home/"$calling_user"/.config
-mv /home/"$calling_user"/dotfiles/config/konsole /home/"$calling_user"/.config/konsole/
-mv /home/"$calling_user"/dotfiles/config/konsolerc /home/"$calling_user"/.config/konsolerc
+mv /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
+mv /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 
 konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
