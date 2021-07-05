@@ -20,6 +20,10 @@ sudo -i -u $calling_user bash << EOF
 
 echo 'Running as' `whoami`
 
+#├── konsole
+#│   ├── kama.profile
+#│   └── mydarkpastel.colorscheme
+#├── konsolerc
 konsole -e bash -c "mkdir /home/"$calling_user"/.config; mv /home/"$calling_user"/dotfiles/config/konsole; mv /home/"$calling_user"/dotfiles/config/consolerc"
 konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 
