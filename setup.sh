@@ -54,7 +54,7 @@ git clone https://github.com/powerline/fonts.git \
 #│   └── mydarkpastel.colorscheme
 #├── konsolerc
 mkdir /home/"$calling_user"/.config
-cp /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
+cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
 cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 
 #Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
