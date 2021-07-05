@@ -57,6 +57,9 @@ mkdir /home/"$calling_user"/.config
 mv /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
 mv /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 
+export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
+export RUNLEVEL=3
+
 konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
 
