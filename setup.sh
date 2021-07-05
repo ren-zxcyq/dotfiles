@@ -15,20 +15,6 @@ sudo apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip pyt
 # Install python libs
 sudo pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
-# Run the rest as the caller
-sudo -i -u $calling_user bash << EOF
-
-echo 'Running as' `whoami`
-
-#├── konsole
-#│   ├── kama.profile
-#│   └── mydarkpastel.colorscheme
-#├── konsolerc
-konsole -e bash -c "mkdir /home/"$calling_user"/.config; mv /home/"$calling_user"/dotfiles/config/konsole; mv /home/"$calling_user"/dotfiles/config/consolerc"
-konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
-
-EOF
-
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
 && cd fonts/ \
@@ -58,8 +44,20 @@ git clone https://github.com/powerline/fonts.git \
 && cd .. \
 && rm -rf fonts/
 
+# Run the rest as the caller
 sudo -i -u $calling_user bash << EOF
 
+echo 'Running as' `whoami`
+
+#├── konsole
+#│   ├── kama.profile
+#│   └── mydarkpastel.colorscheme
+#├── konsolerc
+mkdir /home/"$calling_user"/.config
+mv /home/"$calling_user"/dotfiles/config/konsole /home/"$calling_user"/.config/konsole/
+mv /home/"$calling_user"/dotfiles/config/konsolerc /home/"$calling_user"/.config/konsolerc
+
+konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
 konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
 
 EOF
