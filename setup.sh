@@ -60,8 +60,11 @@ mv /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsol
 export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
 export RUNLEVEL=3
 
-konsole -e bash -c "/home/"$calling_user"/dotfiles/install_zsh.sh"
+#Unattended install
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended \
 konsole -e bash -c "/home/"$calling_user"/dotfiles/move_dotfiles.sh"
+# Make zsh your default shell
+chsh -s $(which zsh)
 
 EOF
 
