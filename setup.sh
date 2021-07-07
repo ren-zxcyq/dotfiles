@@ -55,7 +55,7 @@ mkdir /home/"$calling_user"/.config
 #cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
 cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 cp /home/"$calling_user"/dotfiles/konsole/kama.profile /home/"$calling_user"/.local/share/konsole/kama.profile
-cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /home/share/konsole/mydarkpastel.colorscheme
+sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
 
 #Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
 #export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
