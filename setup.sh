@@ -47,15 +47,15 @@ git clone https://github.com/powerline/fonts.git \
 # Run the rest as the caller
 #sudo -i -u $calling_user bash << EOF
 
-#echo 'Running as' `whoami`
-
 #├── konsole
 #│   ├── kama.profile
 #│   └── mydarkpastel.colorscheme
 #├── konsolerc
 mkdir /home/"$calling_user"/.config
-cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
+#cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
 cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
+cp /home/"$calling_user"/dotfiles/konsole/kama.profile /home/"$calling_user"/.local/share/konsole/kama.profile
+cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /home/share/konsole/mydarkpastel.colorscheme
 
 #Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
 #export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
@@ -76,13 +76,14 @@ cp ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # Copy zsh settings
 cp ~/dotfiles/zshrc ~/.zshrc
+# Copy aliases.zsh to $ZSH_CUSTOM/aliases.zsh
 cp ~/dotfiles/custom/aliases.zsh .oh-my-zsh/custom/aliases.zsh
-#$ZSH_CUSTOM/aliases.zsh
 #cp -r ~/dotfiles/custom/plugins/k $ZSH_CUSTOM/plugins/k
 # k - already exists under custom/plugins/ but in case of update:
+# Clone k into #$ZSH_CUSTOM/plugins/k
 git clone https://github.com/supercrabtree/k .oh-my-zsh/custom/plugins/k
-#$ZSH_CUSTOM/plugins/k
 rm -rf .oh-my-zsh/custom/plugins/k/.git/
+
 # manual oh-my-zsh update
 #omz update
 
