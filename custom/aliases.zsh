@@ -1,3 +1,5 @@
+alias k="k -h"
+alias kk="k -hA"
 alias ll="ls -la"
 alias hax="tmux new -A -s Hax"
 alias v='vim'
