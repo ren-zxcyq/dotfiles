@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # Link dotfiles -> ~
 c_symlinks() {
   files="zshrc vimrc tmux.conf gitconfig gitignore.global aliases"
