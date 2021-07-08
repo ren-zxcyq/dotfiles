@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#! /usr/bin/bash
 # Remove symlinks to dotfiles in home directory
 
 remove_symlinks() {
