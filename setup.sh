@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Get Ready
 cd ~
 calling_user=`who | awk '{print $1}'`
