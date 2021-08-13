@@ -17,6 +17,10 @@ sudo -s apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip 
 # Install python libs
 sudo -s pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
+# Rust
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+rustup update
+
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
 && cd fonts/ \
@@ -58,6 +62,11 @@ mkdir /home/"$calling_user"/.config
 cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
 cp /home/"$calling_user"/dotfiles/konsole/kama.profile /home/"$calling_user"/.local/share/konsole/kama.profile
 sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
+
+# Alacritty
+cargo install alacritty
+mkdir /home/"$calling_user"/.config/alacritty
+cp /home/"$calling_user"/dotfiles/alacritty.yml /home/"$calling_user"/.config/alacritty/alacritty.yml
 
 #Fix for - QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp
 #export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir
