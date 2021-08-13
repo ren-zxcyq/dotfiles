@@ -12,7 +12,7 @@ echo 'Running as' `whoami`
 #sudo ./VBoxLinuxAdditions.run
 
 # Install apt packages
-sudo -s apt -y install konsole wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh
+sudo -s apt -y install wget ripgrep httpie htop vim python3 python3-pip python3-venv tmux git netcat socat nmap xxd unzip tree zsh #konsole
 
 # Install python libs
 sudo -s pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
@@ -53,15 +53,15 @@ git clone https://github.com/powerline/fonts.git \
 # Run the rest as the caller
 #sudo -i -u $calling_user bash << EOF
 
-#├── konsole
-#│   ├── kama.profile
-#│   └── mydarkpastel.colorscheme
-#├── konsolerc
+##├── konsole - commented every line except the one that is not.
+##│   ├── kama.profile
+##│   └── mydarkpastel.colorscheme
+##├── konsolerc
 mkdir /home/"$calling_user"/.config
-#cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
-cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
-cp /home/"$calling_user"/dotfiles/konsole/kama.profile /home/"$calling_user"/.local/share/konsole/kama.profile
-sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
+##cp -r /home/"$calling_user"/dotfiles/konsole /home/"$calling_user"/.config/konsole/
+#cp /home/"$calling_user"/dotfiles/konsolerc /home/"$calling_user"/.config/konsolerc
+#cp /home/"$calling_user"/dotfiles/konsole/kama.profile /home/"$calling_user"/.local/share/konsole/kama.profile
+#sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
 
 # Alacritty
 cargo install alacritty
