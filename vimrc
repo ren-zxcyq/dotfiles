@@ -31,14 +31,6 @@ set virtualedit=block " so we can go one character past the last in normal mode.
 
 
 
-" Set color scheme
-set t_Co=256
-set termguicolors
-syntax enable
-set background=dark
-colorscheme monokai
-
-
 " Create $HOME/.vim/SUBDIRS & set backup, swap and undo files to be created there.
 let s:VIMROOT = $HOME."/.vim"
 " Create necessary folders if they don't already exist.
@@ -58,3 +50,17 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set noswapfile
 set nobackup
+
+
+
+" Set color scheme
+set term=xterm-256color
+"set t_Co=256
+set termguicolors
+"set background=dark termguicolors "cursorline
+syntax enable
+colorscheme monokai
+"set t_Co=256                         " Enable 256 colors
+"set termguicolors                    " Enable GUI colors for the terminal to get truecolor
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
