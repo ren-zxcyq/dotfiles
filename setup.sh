@@ -19,7 +19,6 @@ sudo -s pip3 install -U requests flask flask-wtf hashcrack lxml paramiko
 
 # Rust
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-rustup update
 
 # Install fonts
 git clone https://github.com/powerline/fonts.git \
@@ -64,7 +63,8 @@ mkdir /home/"$calling_user"/.config
 #sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
 
 # Alacritty
-sudo -s apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+rustup update
+sudo -s apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 cargo install alacritty
 mkdir /home/"$calling_user"/.config/alacritty
 cp /home/"$calling_user"/dotfiles/alacritty.yml /home/"$calling_user"/.config/alacritty/alacritty.yml
