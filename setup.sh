@@ -64,6 +64,7 @@ mkdir /home/"$calling_user"/.config
 #sudo cp /home/"$calling_user"/dotfiles/konsole/mydarkpastel.colorscheme /usr/share/konsole/mydarkpastel.colorscheme
 
 # Alacritty
+sudo -s apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 cargo install alacritty
 mkdir /home/"$calling_user"/.config/alacritty
 cp /home/"$calling_user"/dotfiles/alacritty.yml /home/"$calling_user"/.config/alacritty/alacritty.yml
